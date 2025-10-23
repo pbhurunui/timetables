@@ -172,8 +172,8 @@ class Timetable:
                 output.append(f"\n{entry.day.name}")
                 output.append("-" * 70)
                 
-            subject_name = self.subjects.get(entry.subject_code, Subject(entry.subject_code, "Unknown")).name
-            teacher_name = self.teachers.get(entry.teacher_id, Teacher(entry.teacher_id, "Unknown")).name
+            subject_name = self.subjects.get(entry.subject_code, Subject(entry.subject_code, entry.subject_code)).name
+            teacher_name = self.teachers.get(entry.teacher_id, Teacher(entry.teacher_id, entry.teacher_id)).name
             room = entry.room or "TBA"
             
             output.append(f"  {entry.time_slot} | {subject_name:20} | {teacher_name:20} | Room: {room}")
@@ -202,8 +202,8 @@ class Timetable:
                 output.append(f"\n{entry.day.name}")
                 output.append("-" * 70)
                 
-            subject_name = self.subjects.get(entry.subject_code, Subject(entry.subject_code, "Unknown")).name
-            class_name = self.classes.get(entry.class_id, SchoolClass(entry.class_id, "Unknown")).name
+            subject_name = self.subjects.get(entry.subject_code, Subject(entry.subject_code, entry.subject_code)).name
+            class_name = self.classes.get(entry.class_id, SchoolClass(entry.class_id, entry.class_id)).name
             room = entry.room or "TBA"
             
             output.append(f"  {entry.time_slot} | {subject_name:20} | {class_name:20} | Room: {room}")

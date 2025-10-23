@@ -243,7 +243,7 @@ class TimetableCLI:
                 print("\nCannot add entry: Conflict detected!")
                 print("Either the teacher or the class is already scheduled at this time.")
                 
-        except (ValueError, StopIteration) as e:
+        except ValueError as e:
             print(f"Invalid input: {e}")
             
     def view_timetables(self):
